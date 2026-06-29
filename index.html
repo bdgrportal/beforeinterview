@@ -150,7 +150,7 @@
     .p-num { font-family:var(--fd); font-size:2.5rem; font-weight:700; color:rgba(255,255,255,.12); line-height:1; margin-bottom:.3rem; }
     .p-title { font-family:var(--fd); font-weight:700; color:#fff; font-size:1.05rem; margin-bottom:.4rem; }
     .p-sub { font-size:.82rem; color:rgba(255,255,255,.58); line-height:1.55; }
-    .p-badge { display:inline-block; margin-top:.5rem; font-size:.72rem; font-weight:700; padding:.2rem .65rem; border-radius:100px; background:var(--teal); color:var(--navy); }
+    .p-badge { display:inline-flex; align-items:center; gap:.38rem; margin-top:.75rem; font-size:.72rem; font-weight:600; padding:.35rem .75rem; border-radius:8px; background:rgba(125,200,192,.13); color:var(--teal); border:1px solid rgba(125,200,192,.35); letter-spacing:.01em; }
     @media(max-width:700px){ .process-steps{grid-template-columns:1fr;} .p-arrow{display:none;} .process-box{padding:1.5rem 1.1rem;} }
 
     /* TOPIC CHIPS */
@@ -500,7 +500,7 @@
           <div class="p-num">01</div>
           <div class="p-title">Elemzés</div>
           <div class="p-sub">A kiindulópont — minden élethelyzet más. Ebben a szakaszban egy átfogó pénzügyi képet készítünk az ügyfél céljairól, helyzetéről és lehetőségeiről.</div>
-          <span class="p-badge">minden új munkatársunk elemzőként dolgozik az első 1–3 hónapban</span>
+          <span class="p-badge"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5.5" cy="5.5" r="5" stroke="currentColor" stroke-width="1"/><path d="M3.5 5.5l1.5 1.5 2.5-2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>minden új munkatársunk elemzőként dolgozik az első 1–3 hónapban</span>
         </div>
         <div class="p-arrow">→</div>
         <div class="p-step">
@@ -671,8 +671,13 @@
 <section id="munka1" class="section graph-bg">
   <div class="container">
     <div class="label-chip chip-teal">Munka & karrier — 1</div>
-    <h2 class="section-title">Mit csinál egy pénzügyi<br>elemző a mindennapokban?</h2>
+    <h2 class="section-title">Mit csinál egy munkatársunk<br>a mindennapokban?</h2>
     <p class="section-sub">A munkakör három fő területre osztható:</p>
+    <div style="margin-bottom:2rem;">
+      <div class="apt-btn-wrap" onclick="document.getElementById('diak-overlay').classList.add('open');document.body.style.overflow='hidden';" style="cursor:pointer;">
+        <span class="apt-btn-inner" style="background:var(--navy);">🎓 Diák vagyok — nyiss le</span>
+      </div>
+    </div>
 
     <div class="job-bullets">
       <div class="job-bullet">
@@ -732,19 +737,6 @@
       </div>
     </div>
 
-    <div style="background:#fff;border-radius:16px;padding:1.75rem;box-shadow:0 2px 18px rgba(27,56,88,.07);margin-top:1.25rem;">
-      <p style="font-size:.85rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1rem;">Hosszú távon:</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        <div>
-          <div style="font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--navy);">1 – 2,5M Ft<span style="color:var(--purple)">/hó</span></div>
-          <div style="font-size:.8rem;color:var(--gray);margin-top:.2rem;">Tapasztalt tanácsadóként · 2–4 év után</div>
-        </div>
-        <div>
-          <div style="font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--navy);">1,5 – 3M Ft<span style="color:var(--pink)">/hó</span></div>
-          <div style="font-size:.8rem;color:var(--gray);margin-top:.2rem;">Vezető pozícióban · 2–5 év után</div>
-        </div>
-      </div>
-    </div>
 
     <div class="perks-row">
       <span class="perk">200k fix 1. hónap</span>
@@ -753,6 +745,33 @@
       <span class="perk">Apple eszköz támogatás</span>
       <span class="perk">Ösztöndíjas MNB képzés (60k Ft)</span>
       <span class="perk">Megbízási szerződés</span>
+    </div>
+
+    <hr class="divider">
+    <h3 style="font-size:1.15rem;margin-bottom:.5rem;">2 perspektíva — hosszú távon</h3>
+    <div class="vision-cards">
+      <div class="vision-card" style="border-top:3px solid var(--teal);padding:0;overflow:hidden;">
+        <div style="padding:1.4rem 1.4rem .9rem;">
+          <div style="font-size:1.4rem;margin-bottom:.5rem;">🎯</div>
+          <div style="font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;">2–4 év után</div>
+          <h4 style="margin-bottom:.5rem;">Profi egyéni tanácsadó, specialista</h4>
+          <p style="font-size:.84rem;color:var(--gray);line-height:1.6;">Kiválasztasz egy szakterületet amiben profi leszel — és 10 másik kolléga munkáját képes vagy elvégezni egy hónap alatt.</p>
+        </div>
+        <div style="background:rgba(125,200,192,.08);border-top:1px solid rgba(125,200,192,.2);padding:.85rem 1.4rem;">
+          <div style="font-family:var(--fd);font-size:1.45rem;font-weight:700;color:var(--navy);">1 – 2,5M Ft<span style="color:var(--teal)">/hó</span></div>
+        </div>
+      </div>
+      <div class="vision-card" style="border-top:3px solid var(--pink);padding:0;overflow:hidden;">
+        <div style="padding:1.4rem 1.4rem .9rem;">
+          <div style="font-size:1.4rem;margin-bottom:.5rem;">👥</div>
+          <div style="font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;">2–5 év után</div>
+          <h4 style="margin-bottom:.5rem;">3–8 fős csoportvezető</h4>
+          <p style="font-size:.84rem;color:var(--gray);line-height:1.6;">Komolyabb felelősség, de skálázható bevétel — ahány kolléga, annyi potenciális bevételi lehetőség a csapatodon keresztül.</p>
+        </div>
+        <div style="background:rgba(232,69,122,.06);border-top:1px solid rgba(232,69,122,.15);padding:.85rem 1.4rem;">
+          <div style="font-family:var(--fd);font-size:1.45rem;font-weight:700;color:var(--navy);">1,5 – 3M Ft<span style="color:var(--pink)">/hó</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -780,21 +799,61 @@
       </div>
     </div>
 
-    <h3 style="font-size:1.15rem;margin-bottom:.5rem;">2 karrierirány — 1–2 éven belül</h3>
-    <div class="vision-cards">
-      <div class="vision-card">
-        <div style="font-size:1.5rem;margin-bottom:.5rem;">🎯</div>
-        <h4>Profi egyéni tanácsadó, specialista</h4>
-        <div class="vt" style="color:var(--teal);">1 – 2,5M Ft/hó</div>
-        <p>2–4 év szakmai tapasztalattal. Kiválasztasz egy szakterületet amiben profi leszel — és 10 másik kolléga munkáját képes vagy elvégezni egy hónap alatt.</p>
+    <hr class="divider" style="margin:2rem 0;"><div class="label-chip chip-purple">Közösség & csapat</div>
+    <h2 class="section-title" style="margin-bottom:.5rem;">Nézz be néhány csapatépítő<br>programunkba / utazásunkba.</h2>
+    <p class="section-sub">Rövid videók a mindennapjainkból.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.5rem;">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7475842930918460674"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
+        </div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">MOL Campus / Skyward</div>
       </div>
-      <div class="vision-card">
-        <div style="font-size:1.5rem;margin-bottom:.5rem;">👥</div>
-        <h4>3–8 fős csoport vezető</h4>
-        <div class="vt" style="color:var(--pink);">1,5 – 3M Ft/hó</div>
-        <p>2–5 év szakmai és menedzsment tapasztalattal. Komolyabb felelősség, de skálázható bevétel — ahány kolléga, annyi potenciális bevételi lehetőség a csapatodon keresztül.</p>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7431629138600938774"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
+        </div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Horizon sorfőzde</div>
       </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7365205321251425569"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
+        </div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Hungexpo – Gála 2025</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7637161654492630274"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
+        </div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Mykonos – 2026</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7506450335498636566"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
+        </div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Kréta – 2025</div>
+      </div>
+
     </div>
+    <style>
+      @media(max-width:700px){ .tiktok-grid { grid-template-columns:repeat(2,1fr) !important; } }
+      @media(max-width:420px){ .tiktok-grid { grid-template-columns:1fr !important; } }
+    </style>
 
     <hr class="divider">
     <h3 style="font-size:1.15rem;margin-bottom:.35rem;">Mire számíthatnak munkatársaink?</h3>
@@ -994,67 +1053,6 @@
   </div>
 </section>
 
-<!-- TIKTOK SZEKCIÓ -->
-<section class="section-sm graph-bg">
-  <div class="container">
-    <div class="label-chip chip-purple">Közösség & csapat</div>
-    <h2 class="section-title" style="margin-bottom:.5rem;">Nézz be néhány csapatépítő<br>programunkba / utazásunkba.</h2>
-    <p class="section-sub">Rövid videók a mindennapjainkból.</p>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.5rem;">
-
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
-        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
-          <iframe src="https://www.tiktok.com/embed/v2/7475842930918460674"
-            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
-            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
-        </div>
-        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">MOL Campus / Skyward</div>
-      </div>
-
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
-        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
-          <iframe src="https://www.tiktok.com/embed/v2/7431629138600938774"
-            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
-            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
-        </div>
-        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Horizon sorfőzde</div>
-      </div>
-
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
-        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
-          <iframe src="https://www.tiktok.com/embed/v2/7365205321251425569"
-            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
-            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
-        </div>
-        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Hungexpo – Gála 2025</div>
-      </div>
-
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
-        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
-          <iframe src="https://www.tiktok.com/embed/v2/7637161654492630274"
-            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
-            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
-        </div>
-        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Mykonos – 2026</div>
-      </div>
-
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
-        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
-          <iframe src="https://www.tiktok.com/embed/v2/7506450335498636566"
-            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
-            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
-        </div>
-        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Kréta – 2025</div>
-      </div>
-
-    </div>
-    <style>
-      @media(max-width:700px){ .tiktok-grid { grid-template-columns:repeat(2,1fr) !important; } }
-      @media(max-width:420px){ .tiktok-grid { grid-template-columns:1fr !important; } }
-    </style>
-  </div>
-</section>
-
 <!-- CTA -->
 <section id="cta" class="graph-dark">
   <div class="container">
@@ -1110,5 +1108,220 @@
   });
   mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMobile(); });
 </script>
+
+<!-- DIÁK OLDALSÓ TAB -->
+<style>
+  .diak-fab {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 998;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 3px;
+    background: transparent;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(27,56,88,.28);
+    transition: transform .18s, box-shadow .18s;
+    cursor: pointer;
+  }
+  .diak-fab:hover { transform: scale(1.08); box-shadow: 0 10px 32px rgba(27,56,88,.36); }
+  .diak-fab::before {
+    content: '';
+    position: absolute;
+    width: 200%; height: 200%;
+    top: -50%; left: -50%;
+    background: conic-gradient(#22c55e 40deg, transparent 120deg);
+    animation: apt-spin 2.2s linear infinite;
+  }
+  .diak-fab-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .15rem;
+    border: none;
+    cursor: pointer;
+  }
+  .diak-fab-emoji { font-size: 1.5rem; line-height: 1; }
+  .diak-fab-label { font-family: var(--fb); font-size: .6rem; font-weight: 800; color: #fff; letter-spacing: .06em; text-transform: uppercase; line-height: 1.3; text-align: center; }
+
+  /* MODAL */
+  .diak-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,20,40,.55);
+    backdrop-filter: blur(4px);
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .diak-overlay.open { display: flex; }
+  .diak-modal {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 680px;
+    width: 100%;
+    padding: 2rem 2.2rem 2rem;
+    position: relative;
+    animation: diak-in .28s cubic-bezier(.22,1,.36,1);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  @keyframes diak-in {
+    from { opacity:0; transform: translateY(28px) scale(.97); }
+    to   { opacity:1; transform: translateY(0) scale(1); }
+  }
+  .diak-close {
+    position: absolute;
+    top: 1rem; right: 1.1rem;
+    background: none; border: none;
+    font-size: 1.2rem; color: var(--gray);
+    cursor: pointer; line-height: 1;
+    transition: color .15s;
+  }
+  .diak-close:hover { color: var(--navy); }
+  .diak-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.25rem;
+    font-size: .83rem;
+  }
+  .diak-table th {
+    padding: .6rem .9rem;
+    font-family: var(--fb);
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border-bottom: 2px solid var(--border);
+  }
+  .diak-table th:first-child { color: var(--gray); text-align: left; width: 22%; }
+  .diak-table th.th-bad  { color: var(--gray); text-align: left; }
+  .diak-table th.th-good { color: var(--teal); text-align: left; }
+  .diak-table td {
+    padding: .85rem .9rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.55;
+    color: var(--gray);
+  }
+  .diak-table td:first-child {
+    font-family: var(--fb);
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .diak-table td.good {
+    color: var(--navy);
+    background: rgba(125,200,192,.06);
+  }
+  .diak-table tr:last-child td { border-bottom: none; }
+  .diak-cta-row { margin-top: 1.6rem; text-align: center; }
+</style>
+
+<div class="diak-overlay" id="diak-overlay" onclick="if(event.target===this){this.classList.remove('open');document.body.style.overflow='';}">
+  <div class="diak-modal">
+    <button class="diak-close" onclick="document.getElementById('diak-overlay').classList.remove('open');document.body.style.overflow='';">✕</button>
+    <div class="label-chip chip-teal" style="margin-bottom:.9rem;">🎓 DIÁKOK FIGYELMÉBE</div>
+    <table class="diak-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="th-bad">Klasszikus diákmunka</th>
+          <th class="th-good">Nálunk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kereset</td>
+          <td>~2 000–2 500 Ft/óra, fix összeg</td>
+          <td class="good">150–600 000 Ft/hó, teljesítmény alapon — nem az óra, hanem az eredmény számít</td>
+        </tr>
+        <tr>
+          <td>Készségek</td>
+          <td>Többnyire rutinfeladatok: kiszolgálás, bevételezés, raktár, műszakok</td>
+          <td class="good">Valós szakmai tapasztalat: tárgyalástechnika, ügyfélkezelés, pénzügyi elemzés — CV-re kerülő kompetenciák</td>
+        </tr>
+        <tr>
+          <td>Beosztás</td>
+          <td>Fix műszak, leadott beosztás szerint — vizsgaidőszak sem kivétel</td>
+          <td class="good">Saját időgazdálkodás — vizsgaidőszakban lazíthatsz, kampányban ráerősíthetsz</td>
+        </tr>
+        <tr>
+          <td>Hosszú táv</td>
+          <td>Alap referencia és pénz, diploma után rendszerint vége</td>
+          <td class="good">Kiépített kapcsolatrendszer, skálázható vezetői program, főállású opció maradhat diploma után is</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Praktikus infók -->
+    <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+    <h4 style="font-size:.82rem;font-family:var(--fb);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);margin-bottom:1rem;">Praktikus infók diákoknak</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;">
+      <div style="background:var(--bg);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;">
+        <span style="font-size:1.25rem;line-height:1;">⏰</span>
+        <div>
+          <div style="font-family:var(--fb);font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:.2rem;">Rugalmas munkaidő</div>
+          <div style="font-size:.78rem;color:var(--gray);line-height:1.5;">Heti 15–20 óra, saját idősávban — vizsgaidőszak sem probléma</div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;">
+        <span style="font-size:1.25rem;line-height:1;">📍</span>
+        <div>
+          <div style="font-family:var(--fb);font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:.2rem;">Helyszín</div>
+          <div style="font-size:.78rem;color:var(--gray);line-height:1.5;">XI. kerület, Gellérthegy — közel: BME, ELTE, CORVINUS, PPKE, MATE, KRE</div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;">
+        <span style="font-size:1.25rem;line-height:1;">🚀</span>
+        <div>
+          <div style="font-family:var(--fb);font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:.2rem;">Nulláról indítunk</div>
+          <div style="font-size:.78rem;color:var(--gray);line-height:1.5;">Nem előírás a szakmai tapasztalat — megkapod tőlünk a szakmai felkészítést</div>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;">
+        <span style="font-size:1.25rem;line-height:1;">📜</span>
+        <div>
+          <div style="font-family:var(--fb);font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:.2rem;">2 finanszírozott képesítés</div>
+          <div style="font-size:.78rem;color:var(--gray);line-height:1.5;">Betanulás végén kapod — piacképes, CV-re kerülő bizonyítványok</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini karrierlétra -->
+    <h4 style="font-size:.82rem;font-family:var(--fb);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);margin-bottom:.85rem;">Karrierlétra diákként</h4>
+    <div style="display:flex;gap:.5rem;align-items:stretch;margin-bottom:1.6rem;">
+      <div style="flex:1;background:rgba(125,200,192,.08);border:1.5px solid rgba(125,200,192,.3);border-radius:12px;padding:.9rem 1rem;">
+        <div style="font-size:.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;">6–9 hónap</div>
+        <div style="font-family:var(--fb);font-size:.85rem;font-weight:700;color:var(--navy);">Önálló tanácsadói praxis</div>
+        <div style="font-size:.77rem;color:var(--gray);margin-top:.3rem;line-height:1.5;">Saját ügyfélbázis, önálló munkavégzés</div>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--gray);font-size:1rem;">→</div>
+      <div style="flex:1;background:rgba(232,69,122,.06);border:1.5px solid rgba(232,69,122,.2);border-radius:12px;padding:.9rem 1rem;">
+        <div style="font-size:.68rem;font-weight:700;color:var(--pink);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;">12–18 hónap</div>
+        <div style="font-family:var(--fb);font-size:.85rem;font-weight:700;color:var(--navy);">Junior vezetői program</div>
+        <div style="font-size:.77rem;color:var(--gray);margin-top:.3rem;line-height:1.5;">Csapat építése, skálázható bevétel</div>
+      </div>
+    </div>
+
+    <div class="diak-cta-row">
+      <p style="font-size:.82rem;color:var(--gray);margin-bottom:0;">Ha kíváncsi vagy, hogyan néz ki ez a gyakorlatban — gyere el egy rövid interjúra.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
