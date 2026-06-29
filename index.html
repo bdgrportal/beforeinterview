@@ -1230,6 +1230,26 @@
   }
   .diak-table tr:last-child td { border-bottom: none; }
   .diak-cta-row { margin-top: 1.6rem; text-align: center; }
+
+  @media(max-width:600px) {
+    .diak-modal { padding: 1.4rem 1.1rem 1.6rem; border-radius: 16px; }
+    /* Table → kártyák mobilon */
+    .diak-table { display: block; }
+    .diak-table thead { display: none; }
+    .diak-table tbody { display: flex; flex-direction: column; gap: .55rem; }
+    .diak-table tbody tr { display: block; border-radius: 10px; border: 1px solid var(--border); overflow: hidden; background: #fff; }
+    .diak-table td { display: block; border-bottom: 1px solid var(--border); padding: .6rem .85rem; font-size: .8rem; }
+    .diak-table td:first-child { background: var(--bg); font-size: .68rem; padding: .45rem .85rem; border-bottom: 1px solid var(--border); }
+    .diak-table td:nth-child(2)::before { content: "Klasszikus: "; font-weight: 700; color: var(--gray); font-size: .7rem; display: block; margin-bottom: .15rem; text-transform: uppercase; letter-spacing: .04em; }
+    .diak-table td.good { background: rgba(125,200,192,.07); }
+    .diak-table td.good::before { content: "Nálunk: "; font-weight: 700; color: var(--teal); font-size: .7rem; display: block; margin-bottom: .15rem; text-transform: uppercase; letter-spacing: .04em; }
+    .diak-table td:last-child { border-bottom: none; }
+    /* Praktikus infók: 1 oszlop mobilon */
+    .diak-info-grid { grid-template-columns: 1fr !important; }
+    /* Timeline: egymás alá */
+    .diak-timeline { flex-direction: column !important; }
+    .diak-timeline-arrow { display: none !important; }
+  }
 </style>
 
 <div class="diak-overlay" id="diak-overlay" onclick="if(event.target===this){this.classList.remove('open');document.body.style.overflow='';}">
@@ -1270,7 +1290,7 @@
     <!-- Praktikus infók -->
     <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
     <h4 style="font-size:.82rem;font-family:var(--fb);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);margin-bottom:1rem;">Praktikus infók diákoknak</h4>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;">
+    <div class="diak-info-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;">
       <div style="background:var(--bg);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;">
         <span style="font-size:1.25rem;line-height:1;">⏰</span>
         <div>
@@ -1303,13 +1323,13 @@
 
     <!-- Mini karrierlétra -->
     <h4 style="font-size:.82rem;font-family:var(--fb);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);margin-bottom:.85rem;">Karrierlétra diákként</h4>
-    <div style="display:flex;gap:.5rem;align-items:stretch;margin-bottom:1.6rem;">
+    <div class="diak-timeline" style="display:flex;gap:.5rem;align-items:stretch;margin-bottom:1.6rem;">
       <div style="flex:1;background:rgba(125,200,192,.08);border:1.5px solid rgba(125,200,192,.3);border-radius:12px;padding:.9rem 1rem;">
         <div style="font-size:.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;">6–9 hónap</div>
         <div style="font-family:var(--fb);font-size:.85rem;font-weight:700;color:var(--navy);">Önálló tanácsadói praxis</div>
         <div style="font-size:.77rem;color:var(--gray);margin-top:.3rem;line-height:1.5;">Saját ügyfélbázis, önálló munkavégzés</div>
       </div>
-      <div style="display:flex;align-items:center;color:var(--gray);font-size:1rem;">→</div>
+      <div class="diak-timeline-arrow" style="display:flex;align-items:center;color:var(--gray);font-size:1rem;">→</div>
       <div style="flex:1;background:rgba(232,69,122,.06);border:1.5px solid rgba(232,69,122,.2);border-radius:12px;padding:.9rem 1rem;">
         <div style="font-size:.68rem;font-weight:700;color:var(--pink);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;">12–18 hónap</div>
         <div style="font-family:var(--fb);font-size:.85rem;font-weight:700;color:var(--navy);">Junior vezetői program</div>
