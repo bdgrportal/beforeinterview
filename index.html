@@ -93,7 +93,17 @@
     }
 
     /* HERO */
-    #hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; }
+    #hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; position:relative; overflow:hidden; }
+    .yt-bg-wrap { position:absolute; inset:0; z-index:0; pointer-events:none; }
+    .yt-bg-wrap iframe {
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:177.78vh; height:100vh;
+      min-width:100%; min-height:56.25vw;
+      opacity:.32; pointer-events:none; border:none;
+    }
+    .yt-bg-overlay { position:absolute; inset:0; background:var(--navy); opacity:.60; z-index:1; }
+    #hero .container { position:relative; z-index:2; }
     .hero-tag { display:inline-flex; align-items:center; gap:.5rem; background:rgba(125,200,192,.14); border:1px solid rgba(125,200,192,.35); color:var(--teal); padding:.35rem 1rem; border-radius:100px; font-size:.82rem; font-weight:600; margin-bottom:1.4rem; }
     #hero h1 { font-size:clamp(2.4rem,5.5vw,4.2rem); font-weight:700; line-height:1.08; color:#fff; margin-bottom:1.2rem; }
     #hero h1 .t { color:var(--teal); }
@@ -415,6 +425,11 @@
 
 <!-- HERO -->
 <section id="hero" class="graph-dark">
+  <div class="yt-bg-wrap">
+    <iframe src="https://player.vimeo.com/video/610622896?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0"
+      allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+  <div class="yt-bg-overlay"></div>
   <div class="container">
     <div class="hero-tag">👋 11. kerületi Kelenhegyi iroda — OVB Allfinanz</div>
     <h1>Szia!<br>Örülünk, hogy<br><span class="t">érdeklődsz.</span></h1>
@@ -985,44 +1000,58 @@
     <div class="label-chip chip-purple">Közösség & csapat</div>
     <h2 class="section-title" style="margin-bottom:.5rem;">Nézz be néhány csapatépítő<br>programunkba / utazásunkba.</h2>
     <p class="section-sub">Rövid videók a mindennapjainkból.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:1.75rem;justify-content:center;margin-top:1.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.5rem;">
 
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.65rem;">
-        <div style="border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(27,56,88,.12);">
-          <iframe src="https://www.tiktok.com/embed/v2/7475842930918460674" style="width:280px;height:498px;border:none;display:block;" allowfullscreen allow="encrypted-media"></iframe>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7475842930918460674"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
         </div>
-        <div style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--navy);text-align:center;">MOL Campus / Skyward</div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">MOL Campus / Skyward</div>
       </div>
 
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.65rem;">
-        <div style="border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(27,56,88,.12);">
-          <iframe src="https://www.tiktok.com/embed/v2/7431629138600938774" style="width:280px;height:498px;border:none;display:block;" allowfullscreen allow="encrypted-media"></iframe>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7431629138600938774"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
         </div>
-        <div style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--navy);text-align:center;">Horizon sorfőzde</div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Horizon sorfőzde</div>
       </div>
 
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.65rem;">
-        <div style="border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(27,56,88,.12);">
-          <iframe src="https://www.tiktok.com/embed/v2/7365205321251425569" style="width:280px;height:498px;border:none;display:block;" allowfullscreen allow="encrypted-media"></iframe>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7365205321251425569"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
         </div>
-        <div style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--navy);text-align:center;">Hungexpo – Gála 2025</div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Hungexpo – Gála 2025</div>
       </div>
 
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.65rem;">
-        <div style="border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(27,56,88,.12);">
-          <iframe src="https://www.tiktok.com/embed/v2/7637161654492630274" style="width:280px;height:498px;border:none;display:block;" allowfullscreen allow="encrypted-media"></iframe>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7637161654492630274"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
         </div>
-        <div style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--navy);text-align:center;">Mykonos – 2026</div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Mykonos – 2026</div>
       </div>
 
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.65rem;">
-        <div style="border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(27,56,88,.12);">
-          <iframe src="https://www.tiktok.com/embed/v2/7506450335498636566" style="width:280px;height:498px;border:none;display:block;" allowfullscreen allow="encrypted-media"></iframe>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.55rem;">
+        <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(27,56,88,.12);width:100%;">
+          <iframe src="https://www.tiktok.com/embed/v2/7506450335498636566"
+            style="width:100%;aspect-ratio:9/16;border:none;display:block;min-height:340px;"
+            allowfullscreen allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write"></iframe>
         </div>
-        <div style="font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--navy);text-align:center;">Kréta – 2025</div>
+        <div style="font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;">Kréta – 2025</div>
       </div>
 
     </div>
+    <style>
+      @media(max-width:700px){ .tiktok-grid { grid-template-columns:repeat(2,1fr) !important; } }
+      @media(max-width:420px){ .tiktok-grid { grid-template-columns:1fr !important; } }
+    </style>
   </div>
 </section>
 
