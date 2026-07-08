@@ -444,6 +444,15 @@
     .tsz-num { font-family:var(--fd); font-weight:700; font-size:2.2rem; line-height:1; color:var(--teal); letter-spacing:-.02em; }
     .tsz-lab { margin-top:.5rem; padding-top:.5rem; border-top:2px solid var(--teal); font-family:var(--fb); font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.03em; color:var(--navy); }
     @media (max-width:520px){ .tsz-stats{ grid-template-columns:1fr 1fr; gap:.7rem; } .tsz-num{ font-size:1.8rem; } .tsz-lab{ font-size:.72rem; } }
+
+    /* Csapatépítő videó-galéria */
+    .tt-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.25rem; }
+    .tt-card { background:#fff; border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 6px 22px rgba(27,56,88,.07); }
+    .tt-card video { width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; display:block; background:#000; }
+    .tt-cap { padding:.65rem .8rem; font-family:var(--fb); font-weight:600; font-size:.82rem; color:var(--navy); }
+    .tt-more { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1rem; }
+    @media (max-width:760px){ .tt-gallery{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:480px){ .tt-gallery{ grid-template-columns:1fr; max-width:320px; } }
 </style>
 </head>
 <body>
@@ -892,32 +901,42 @@
     <hr class="divider" style="margin:2rem 0;"><div class="label-chip chip-purple">Közösség & csapat</div>
     <h2 class="section-title" style="margin-bottom:.5rem;">Nézz be néhány csapatépítő<br>programunkba / utazásunkba.</h2>
     <p class="section-sub">Rövid videók a mindennapjainkból.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem;">
-      <a href="https://www.tiktok.com/embed/v2/7475842930918460674" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:.45rem;padding:.42rem 1rem;border-radius:100px;background:#010101;color:#fff;text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .18s,box-shadow .18s;"
-         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-        🪂 MOL Campus / Skyward
-      </a>
-      <a href="https://www.tiktok.com/embed/v2/7431629138600938774" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:.45rem;padding:.42rem 1rem;border-radius:100px;background:#010101;color:#fff;text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .18s,box-shadow .18s;"
-         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-        🍺 Horizon sorfőzde
-      </a>
-      <a href="https://www.tiktok.com/embed/v2/7365205321251425569" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:.45rem;padding:.42rem 1rem;border-radius:100px;background:#010101;color:#fff;text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .18s,box-shadow .18s;"
-         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-        💃 Hungexpo – Gála 2025
-      </a>
-      <a href="https://www.tiktok.com/embed/v2/7637161654492630274" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:.45rem;padding:.42rem 1rem;border-radius:100px;background:#010101;color:#fff;text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .18s,box-shadow .18s;"
-         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-        🇬🇷 Mykonos – 2026
-      </a>
-      <a href="https://www.tiktok.com/embed/v2/7506450335498636566" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:.45rem;padding:.42rem 1rem;border-radius:100px;background:#010101;color:#fff;text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .18s,box-shadow .18s;"
-         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-        🌴 Kréta – 2025
-      </a>
+    <div class="tt-gallery">
+      <figure class="tt-card">
+        <video controls playsinline preload="none" poster="poster-skyward.jpg">
+          <source src="skyward.mp4" type="video/mp4"/>
+          A böngésződ nem támogatja a videó lejátszását.
+        </video>
+        <figcaption class="tt-cap">🪂 MOL Campus / Skyward</figcaption>
+      </figure>
+      <figure class="tt-card">
+        <video controls playsinline preload="none" poster="poster-hungexpo-gala.jpg">
+          <source src="hungexpo-gala.mp4" type="video/mp4"/>
+          A böngésződ nem támogatja a videó lejátszását.
+        </video>
+        <figcaption class="tt-cap">💃 Hungexpo – Gála 2025</figcaption>
+      </figure>
+      <figure class="tt-card">
+        <video controls playsinline preload="none" poster="poster-mykonos.jpg">
+          <source src="mykonos.mp4" type="video/mp4"/>
+          A böngésződ nem támogatja a videó lejátszását.
+        </video>
+        <figcaption class="tt-cap">🇬🇷 Mykonos – 2026</figcaption>
+      </figure>
+      <figure class="tt-card">
+        <video controls playsinline preload="none" poster="poster-kreta.jpg">
+          <source src="kreta.mp4" type="video/mp4"/>
+          A böngésződ nem támogatja a videó lejátszását.
+        </video>
+        <figcaption class="tt-cap">🌴 Kréta – 2025</figcaption>
+      </figure>
+      <figure class="tt-card">
+        <video controls playsinline preload="none" poster="poster-horizon.jpg">
+          <source src="horizon.mp4" type="video/mp4"/>
+          A böngésződ nem támogatja a videó lejátszását.
+        </video>
+        <figcaption class="tt-cap">🍺 Horizon sörfőzde</figcaption>
+      </figure>
     </div>
 
     <hr class="divider">
