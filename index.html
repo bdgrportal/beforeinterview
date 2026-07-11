@@ -453,6 +453,40 @@
     .tt-more { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1rem; }
     @media (max-width:760px){ .tt-gallery{ grid-template-columns:1fr 1fr; } }
     @media (max-width:480px){ .tt-gallery{ grid-template-columns:1fr; max-width:320px; } }
+    /* Így telik egy napod – accordion */
+    .day-acc{display:flex;flex-direction:column;gap:.7rem;margin-top:1.5rem;}
+    .day-item{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(27,56,88,.05);transition:box-shadow .2s;}
+    .day-item.open{box-shadow:0 10px 30px rgba(27,56,88,.10);}
+    .day-head{width:100%;display:flex;align-items:center;gap:.9rem;padding:1rem 1.1rem;background:none;border:0;cursor:pointer;text-align:left;font-family:var(--fb);border-left:4px solid transparent;transition:border-color .2s,background .2s;}
+    .day-item.open .day-head{border-left-color:var(--teal);background:rgba(125,200,192,.06);}
+    .day-emoji{font-size:1.4rem;flex-shrink:0;line-height:1;}
+    .day-htext{flex:1;min-width:0;display:flex;flex-direction:column;}
+    .day-title{font-weight:700;color:var(--navy);font-size:.98rem;}
+    .day-meta{font-size:.8rem;color:var(--gray);margin-top:.15rem;}
+    .day-chev{flex-shrink:0;color:var(--gray);transition:transform .25s;}
+    .day-item.open .day-chev{transform:rotate(180deg);}
+    .day-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .day-item.open .day-body{max-height:900px;}
+    .day-inner{padding:.3rem 1.3rem 1.3rem 1.9rem;}
+    .day-tl{display:flex;flex-direction:column;border-left:2px dashed var(--border);margin:.5rem 0 1rem;padding-left:1.15rem;}
+    .day-row{position:relative;padding:.5rem 0;}
+    .day-row::before{content:'';position:absolute;left:-1.62rem;top:.72rem;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(125,200,192,.2);}
+    .day-time{font-family:var(--fd);font-weight:700;color:var(--navy);font-size:.82rem;}
+    .day-desc{font-size:.87rem;color:var(--gray);line-height:1.5;margin-top:.1rem;}
+    .day-quote{background:var(--bg);border-radius:12px;padding:.9rem 1.1rem;font-size:.88rem;color:var(--navy);font-style:italic;line-height:1.6;}
+    .day-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem;}
+    .day-tag{background:rgba(125,200,192,.12);border:1px solid rgba(125,200,192,.35);color:var(--navy);font-size:.75rem;font-weight:600;padding:.28rem .75rem;border-radius:100px;}
+
+    /* Időpontfoglaló CTA-k */
+    .cta-book-big{display:inline-flex;align-items:center;gap:.55rem;background:var(--teal);color:var(--navy);font-family:var(--fd);font-weight:700;font-size:1.05rem;padding:.95rem 2rem;border-radius:100px;text-decoration:none;box-shadow:0 8px 24px rgba(125,200,192,.4);transition:transform .18s,box-shadow .18s;}
+    .cta-book-big:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(125,200,192,.55);}
+    .cta-band{background:var(--navy);border-radius:22px;padding:2rem 1.6rem;text-align:center;box-shadow:0 16px 44px rgba(27,56,88,.18);}
+    .cta-band h3{color:#fff;font-family:var(--fd);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;margin-bottom:.5rem;line-height:1.25;}
+    .cta-band p{color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.6;max-width:540px;margin:0 auto 1.4rem;}
+
+    .day-row.hl{background:rgba(232,69,122,.07);border-radius:8px;padding:.5rem .7rem;}
+    .day-row.hl::before{background:var(--pink);box-shadow:0 0 0 4px rgba(232,69,122,.2);}
+    .day-row.hl .day-time{color:var(--pink);}
 </style>
 </head>
 <body>
@@ -668,6 +702,123 @@
   </div>
 </section>
 
+<!-- ÍGY TELIK EGY NAPOD -->
+<section id="egynapod" class="section graph-bg">
+  <div class="container">
+    <div class="label-chip chip-teal">Így telik egy napod nálunk</div>
+    <h2 class="section-title" style="margin-bottom:.5rem;">Nincs két egyforma nap.<br>És pont ez a lényeg.</h2>
+    <p class="section-sub">Válaszd ki, melyik élethelyzet áll hozzád a legközelebb — és nézd meg, hogy nézhet ki egy tipikus napod.</p>
+
+    <div class="day-acc">
+
+      <div class="day-item">
+        <button class="day-head" onclick="toggleDay(this)">
+          <span class="day-emoji">🌤️</span>
+          <span class="day-htext"><span class="day-title">Diák — nagyon laza órarend</span><span class="day-meta">heti 5-6 projekt, gyors tempó</span></span>
+          <svg class="day-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="day-body"><div class="day-inner">
+          <div class="day-tl">
+            <div class="day-row"><div class="day-time">09:30</div><div class="day-desc">Érkezés az irodába, kávé, gyors meet a vezetővel, nap tervezése.</div></div>
+            <div class="day-row"><div class="day-time">10:00</div><div class="day-desc">Első időpontom — irodában fogadok egy ügyfelet.</div></div>
+            <div class="day-row"><div class="day-time">12:00</div><div class="day-desc">Ebéd, némi adminisztrációs meló.</div></div>
+            <div class="day-row"><div class="day-time">13:00</div><div class="day-desc">Be kell mennem egy órámra az egyetemre.</div></div>
+            <div class="day-row"><div class="day-time">16:00</div><div class="day-desc">Következő időpontom online — otthonról, vagy vissza az irodába.</div></div>
+            <div class="day-row"><div class="day-time">18:00</div><div class="day-desc">1 óra e-learning, chill.</div></div>
+          </div>
+          <div class="day-quote">„Csak heti 2 belógott napom van, úgyhogy ha akarok, gyakorlatilag főállású tempóban haladok."</div>
+          <div class="day-tags"><span class="day-tag">5–6 folyamat/hét</span><span class="day-tag">saját tempó</span></div>
+        </div></div>
+      </div>
+
+      <div class="day-item open">
+        <button class="day-head" onclick="toggleDay(this)">
+          <span class="day-emoji">📘</span>
+          <span class="day-htext"><span class="day-title">Diák — átlagos órarend</span><span class="day-meta">heti 3-4 projekt, átlagos diák tempó</span></span>
+          <svg class="day-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="day-body"><div class="day-inner">
+          <div class="day-tl">
+            <div class="day-row"><div class="day-time">08:00</div><div class="day-desc">Egyetem, előadások.</div></div>
+            <div class="day-row"><div class="day-time">12:30</div><div class="day-desc">Érkezés az irodába.</div></div>
+            <div class="day-row"><div class="day-time">13:30</div><div class="day-desc">2 online ügyfél + 1 személyes — gyorsan haladok a sűrű programmal.</div></div>
+            <div class="day-row"><div class="day-time">17:00</div><div class="day-desc">Vissza az egyetemre (ide sikerült felvenni az órát 🥲).</div></div>
+            <div class="day-row"><div class="day-time">19:00</div><div class="day-desc">Home office — a maradék adminisztrációt otthon fejezem be.</div></div>
+          </div>
+          <div class="day-quote">„Bízom a következő félév órarendjében, hogy lazább lesz."</div>
+          <div class="day-tags"><span class="day-tag">3–4 folyamat/hét</span><span class="day-tag">akár teljesen online</span><span class="day-tag">vizsgaidőszakban lazíthatsz</span></div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <button class="day-head" onclick="toggleDay(this)">
+          <span class="day-emoji">🤓</span>
+          <span class="day-htext"><span class="day-title">Diák — feszes, néha extrém órarend</span><span class="day-meta">heti 1-2 projekt, de itt legalább tudsz karriert építeni műszakok helyett</span></span>
+          <svg class="day-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="day-body"><div class="day-inner">
+          <div class="day-tl">
+            <div class="day-row"><div class="day-time">08:00</div><div class="day-desc">Tömött nap: előadások, gyakorlatok estig.</div></div>
+            <div class="day-row"><div class="day-time">18:00</div><div class="day-desc">Egy ügyfelet bevállalok estére — ha van bennem energia, akkor kettőt is.</div></div>
+            <div class="day-row hl"><div class="day-time">⭐ Hétvége</div><div class="day-desc">Tömbösítés: 1 nap alatt 2–3 folyamat, ami hétköznap nem fért bele.</div></div>
+          </div>
+          <div class="day-quote">„Vizsgahéten nullázok, aztán a szünetben 3 nap alatt összehúzok egy hónapnyi termelést."</div>
+          <div class="day-tags"><span class="day-tag">0 → 4–5 folyamat/hét</span><span class="day-tag">te döntöd el a tempót</span></div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <button class="day-head" onclick="toggleDay(this)">
+          <span class="day-emoji">💼</span>
+          <span class="day-htext"><span class="day-title">9–5 mellett — klasszikus másodállás</span><span class="day-meta">heti 3-4 projekt, átlagos másodállású tempó</span></span>
+          <svg class="day-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="day-body"><div class="day-inner">
+          <div class="day-tl">
+            <div class="day-row"><div class="day-time">09:00</div><div class="day-desc">Főállás, ahogy szoktad.</div></div>
+            <div class="day-row"><div class="day-time">17:30</div><div class="day-desc">Hazaút, kaja, kikapcsolás.</div></div>
+            <div class="day-row"><div class="day-time">18:30</div><div class="day-desc">Egy ügyfél fér bele online, home office.</div></div>
+            <div class="day-row"><div class="day-time">Heti 1×</div><div class="day-desc">Beugrok az irodába néhány órára, pl. péntek 12:30 után, egy laza napon.</div></div>
+          </div>
+          <div class="day-quote">„A főállásom mellett az a cél, hogy 6 hónap alatt körözzem le az eredeti bevételem, hogy váltani tudjak."</div>
+          <div class="day-tags"><span class="day-tag">2–3 folyamat/hét</span><span class="day-tag">estékből</span><span class="day-tag">minden hétvége az enyém</span></div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <button class="day-head" onclick="toggleDay(this)">
+          <span class="day-emoji">🚀</span>
+          <span class="day-htext"><span class="day-title">Főállású</span><span class="day-meta">full throttle</span></span>
+          <svg class="day-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="day-body"><div class="day-inner">
+          <div class="day-tl">
+            <div class="day-row"><div class="day-time">08:30</div><div class="day-desc">Nap tervezése, ügyfél-visszahívások.</div></div>
+            <div class="day-row"><div class="day-time">10:00</div><div class="day-desc">1–2 elemzés vagy tanácsadás.</div></div>
+            <div class="day-row"><div class="day-time">14:00</div><div class="day-desc">Laza szakmai program, tehetséggondozó időpont.</div></div>
+            <div class="day-row"><div class="day-time">16:00</div><div class="day-desc">Újabb ügyfél.</div></div>
+            <div class="day-row"><div class="day-time">18:00</div><div class="day-desc">Koccintás, vagy edzés 🍻🏋🏼‍♂️</div></div>
+          </div>
+          <div class="day-quote">„Full throttle."</div>
+          <div class="day-tags"><span class="day-tag">8–12 folyamat/hét + csapat</span><span class="day-tag">gyorsabb, tervezhető karrier</span><span class="day-tag">skálázható bevétel</span></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="section-sm bg-white">
+  <div class="container">
+    <div class="cta-band">
+      <h3>Magadra ismertél valamelyik napban?</h3>
+      <p>Akkor a következő lépés egyszerű: beszéljük meg élőben, egy kötetlen első körön. Nem kell felkészülnöd, csak kíváncsinak lenned.</p>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1jUmhTavyFnCiuqvfV_ptrXnPFHm_f7ejP7CHRVZ7tOCc08jY4N6hHwyczNielgrkkH8br_Yhv" target="_blank" rel="noopener" class="cta-book-big">📅 Időpontot foglalok →</a>
+    </div>
+  </div>
+</section>
+
 <!-- MIÉRT JOBB MINT A BANK -->
 <section id="miert-jobb" class="section graph-bg">
   <div class="container">
@@ -875,6 +1026,17 @@
   </div>
 </section>
 
+<!-- CTA BAND -->
+<section class="section-sm bg-white">
+  <div class="container">
+    <div class="cta-band">
+      <h3>A számok meggyőztek? A többit élőben mondjuk el.</h3>
+      <p>A legjobb kérdéseket úgyis személyesen teszed fel. Foglalj egy időpontot — az első kör csak arról szól, hogy megismerjük egymást.</p>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1jUmhTavyFnCiuqvfV_ptrXnPFHm_f7ejP7CHRVZ7tOCc08jY4N6hHwyczNielgrkkH8br_Yhv" target="_blank" rel="noopener" class="cta-book-big">📅 Foglalok egy interjút →</a>
+    </div>
+  </div>
+</section>
+
 <!-- MUNKA / KARRIER 2 -->
 <section id="munka2" class="section bg-white">
   <div class="container">
@@ -997,7 +1159,7 @@
     </div>
     <div style="margin-top:2rem;">
       <div class="apt-btn-wrap">
-        <a href="https://www.idopontok.eu" target="_blank" rel="noopener" class="apt-btn-inner">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1jUmhTavyFnCiuqvfV_ptrXnPFHm_f7ejP7CHRVZ7tOCc08jY4N6hHwyczNielgrkkH8br_Yhv" target="_blank" rel="noopener" class="apt-btn-inner">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Foglalj időpontot az első interjúra →
         </a>
@@ -1183,9 +1345,9 @@
       <div class="label-chip chip-teal" style="margin-bottom:1.25rem;">Következő lépés</div>
       <h2>Ha az érdeklődésed<br>fokozódott — találkozzunk.</h2>
       <p>Ha ezzel az iránnyal tudsz azonosulni és az érdeklődésed fokozta, nem pedig elvette a kedved az olvasmány — találkozunk az interjún. Az első kör arról szól, hogy kölcsönösen megismerjük egymást. Nem kell mindent tudnod, csak kíváncsinak lenned.</p>
-      <div class="cta-btns">
-        <a href="mailto:gentischer.info@ovb.hu" class="btn btn-pink">Írj nekünk →</a>
-        <a href="#faq" class="btn btn-ghost">Vissza a GYIK-hez</a>
+      <div class="cta-btns" style="flex-direction:column;align-items:center;gap:1.1rem;">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1jUmhTavyFnCiuqvfV_ptrXnPFHm_f7ejP7CHRVZ7tOCc08jY4N6hHwyczNielgrkkH8br_Yhv" target="_blank" rel="noopener" class="cta-book-big" style="font-size:1.18rem;padding:1.1rem 2.5rem;">📅 Foglald le az első interjúd →</a>
+        <a href="mailto:gentischer.info@ovb.hu" class="btn btn-ghost">Inkább írok egy emailt előbb</a>
       </div>
       <p style="color:rgba(255,255,255,.3);font-size:.8rem;margin-top:2rem;">Gentischer Richárd · Területi igazgató · gentischer.info@ovb.hu</p>
     </div>
@@ -1466,5 +1628,8 @@
   </div>
 </div>
 
+<script>
+function toggleDay(btn){var it=btn.parentElement;var op=it.classList.contains("open");document.querySelectorAll(".day-item").forEach(function(x){x.classList.remove("open");});if(!op)it.classList.add("open");}
+</script>
 </body>
 </html>
