@@ -40,6 +40,7 @@
     .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
     .section    { padding: 88px 0; }
     .section-sm { padding: 60px 0; }
+    section[id]{ scroll-margin-top: 78px; }
     h1,h2,h3,h4 { font-family: var(--fd); line-height: 1.15; }
     .section-title { font-size: clamp(1.65rem,3.5vw,2.4rem); font-weight: 700; margin-bottom: .4rem; }
     .section-sub   { font-size: .95rem; color: var(--gray); margin-bottom: 2.5rem; }
@@ -66,10 +67,10 @@
     /* NAV */
     nav { position: fixed; top:0; left:0; right:0; z-index:200; background: rgba(27,56,88,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.08); padding: .9rem 0; }
     .nav-inner { display:flex; align-items:center; justify-content:space-between; }
-    .nav-logo  { font-family:var(--fd); font-weight:700; font-size:.95rem; color:#fff; flex-shrink:1; min-width:0; }
+    .nav-logo  { font-family:var(--fd); font-weight:700; font-size:.85rem; color:#fff; flex-shrink:0; margin-right:1rem; }
     .nav-logo span { color: var(--teal); }
-    .nav-links { display:flex; gap:1.4rem; flex-shrink:0; }
-    .nav-links a { color:rgba(255,255,255,.65); font-size:.82rem; font-weight:500; transition:color .2s; }
+    .nav-links { display:flex; gap:.85rem; row-gap:.3rem; flex-shrink:1; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a { color:rgba(255,255,255,.65); font-size:.75rem; font-weight:500; white-space:nowrap; transition:color .2s; }
     .nav-links a:hover { color: var(--teal); }
 
     /* HAMBURGER */
@@ -78,13 +79,13 @@
     .nav-burger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
     .nav-burger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
     .nav-burger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    .nav-mobile { display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:199; background:rgba(27,56,88,.98); padding-top:72px; flex-direction:column; }
+    .nav-mobile { display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:199; background:rgba(27,56,88,.98); padding-top:60px; flex-direction:column; overflow-y:auto; }
     .nav-mobile.open { display:flex; }
-    .nav-mobile-links { display:flex; flex-direction:column; padding:1.5rem; gap:.25rem; }
-    .nav-mobile-links a { color:rgba(255,255,255,.8); font-size:1.15rem; font-weight:600; font-family:var(--fd); padding:1rem .5rem; border-bottom:1px solid rgba(255,255,255,.08); transition:color .2s; }
+    .nav-mobile-links { display:flex; flex-direction:column; padding:.75rem 1.25rem; gap:0; }
+    .nav-mobile-links a { color:rgba(255,255,255,.85); font-size:.92rem; font-weight:600; font-family:var(--fd); padding:.5rem .4rem; border-bottom:1px solid rgba(255,255,255,.07); transition:color .2s; }
     .nav-mobile-links a:last-child { border-bottom:none; }
     .nav-mobile-links a:hover { color:var(--teal); }
-    .nav-mobile-cta { margin:1.25rem 1.5rem 0; }
+    .nav-mobile-cta { margin:1rem 1.25rem 1.5rem; }
 
     @media(max-width:700px){
       .nav-links { display:none; }
@@ -567,6 +568,15 @@
     .story-inner{padding:0 1rem 1.15rem;}
     .story-inner p{color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.7;margin:0;padding-left:calc(52px + .9rem);}
     @media(max-width:600px){.story-inner p{padding-left:0;}.story-ava{width:44px;height:44px;font-size:.85rem;}}
+
+    /* MOBIL: -20% tipográfia + több elem középre */
+    @media(max-width:700px){
+      html{ font-size:80%; }
+      .section-title, .section-sub{ text-align:center; }
+      .label-chip{ display:block; width:-moz-fit-content; width:fit-content; margin-left:auto; margin-right:auto; }
+      .faq-cats{ justify-content:center; }
+      .perks-row{ justify-content:center; }
+    }
 </style>
 </head>
 <body>
@@ -574,12 +584,20 @@
 <!-- NAV -->
 <nav>
   <div class="container nav-inner">
-    <a href="#hero" class="nav-logo">Gentischer Richárd területi igazgatóság – <span>Career Hub</span></a>
+    <a href="#hero" class="nav-logo">Gentischer Richárd – <span>Career Hub</span></a>
     <ul class="nav-links">
       <li><a href="#bemutatkozas">Rólunk</a></li>
       <li><a href="#hogyan">A munka</a></li>
+      <li><a href="#egynapod">Egy napod</a></li>
+      <li><a href="#munkatarsak">Munkatársak</a></li>
+      <li><a href="#csapatvideok">Programok</a></li>
       <li><a href="#munka1">Karrier</a></li>
+      <li><a href="#munka2">Lehetőségek</a></li>
       <li><a href="#miert-jobb">Miért mi?</a></li>
+      <li><a href="#ugyfelesetek">Ügyfélesetek</a></li>
+      <li><a href="#google-ertekelesek">Vélemények</a></li>
+      <li><a href="#tarsadalmi">Társadalom</a></li>
+      <li><a href="#csapat">Csapat</a></li>
       <li><a href="#faq">GYIK</a></li>
       <li><a href="#cta" style="color:var(--teal)">Interjú →</a></li>
     </ul>
@@ -595,11 +613,17 @@
     <a href="#bemutatkozas" onclick="closeMobile()">Rólunk</a>
     <a href="#hogyan" onclick="closeMobile()">A munka</a>
     <a href="#egynapod" onclick="closeMobile()">Így telik egy napod</a>
+    <a href="#munkatarsak" onclick="closeMobile()">Munkatársak</a>
+    <a href="#csapatvideok" onclick="closeMobile()">Közös programok</a>
     <a href="#munka1" onclick="closeMobile()">Karrier</a>
+    <a href="#munka2" onclick="closeMobile()">Lehetőségek</a>
     <a href="#miert-jobb" onclick="closeMobile()">Miért mi?</a>
-    <a href="#csapat" onclick="closeMobile()">Csapat</a>
+    <a href="#ugyfelesetek" onclick="closeMobile()">Ügyfélesetek</a>
+    <a href="#google-ertekelesek" onclick="closeMobile()">Vélemények</a>
     <a href="#tarsadalmi" onclick="closeMobile()">Társadalmi szerepvállalás</a>
+    <a href="#csapat" onclick="closeMobile()">Csapat</a>
     <a href="#faq" onclick="closeMobile()">GYIK</a>
+    <a href="#cta" onclick="closeMobile()">Interjú</a>
   </div>
   <div class="nav-mobile-cta">
     <a href="mailto:gentischer.info@ovb.hu" class="btn btn-pink" style="display:block;text-align:center;" onclick="closeMobile()">Írj nekünk →</a>
@@ -1284,7 +1308,7 @@
 </section>
 
 <!-- ÜGYFÉL-ESETEK -->
-<section class="section-sm graph-bg" style="padding-top:2rem;padding-bottom:1.5rem;">
+<section id="ugyfelesetek" class="section-sm graph-bg" style="padding-top:2rem;padding-bottom:1.5rem;">
   <div class="container">
     <div class="cases-wrap">
       <div class="cases-teaser">💡 Kíváncsi vagy 2 tipikus ügyfélélményre? Kattints és nézd meg.</div>
