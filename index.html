@@ -577,6 +577,21 @@
       .faq-cats{ justify-content:center; }
       .perks-row{ justify-content:center; }
     }
+
+    /* Jövedelem-kontextus lenyílók */
+    .inc-acc{display:flex;flex-direction:column;gap:.7rem;margin-top:1.75rem;}
+    .inc-item{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(27,56,88,.05);}
+    .inc-item.open{box-shadow:0 10px 30px rgba(27,56,88,.10);}
+    .inc-head{width:100%;display:flex;align-items:center;gap:.7rem;padding:.95rem 1.1rem;background:none;border:0;border-left:4px solid var(--teal);cursor:pointer;text-align:left;font-family:var(--fd);font-weight:700;font-size:.92rem;color:var(--navy);line-height:1.35;}
+    .inc-ico{margin-left:auto;flex-shrink:0;transition:transform .25s;color:var(--gray);}
+    .inc-item.open .inc-ico{transform:rotate(180deg);}
+    .inc-body{max-height:0;overflow:hidden;transition:max-height .55s ease;}
+    .inc-item.open .inc-body{max-height:3400px;}
+    .inc-inner{padding:.3rem 1.2rem 1.3rem;color:var(--gray);font-size:.88rem;line-height:1.7;}
+    .inc-inner p{margin:0 0 .7rem;}
+    .inc-inner strong{color:var(--navy);}
+    .inc-inner ul{margin:.1rem 0 .85rem;padding-left:1.1rem;display:flex;flex-direction:column;gap:.35rem;}
+    .inc-inner li{font-size:.86rem;line-height:1.55;list-style:disc;}
 </style>
 </head>
 <body>
@@ -1171,6 +1186,18 @@
         <div style="background:rgba(232,69,122,.06);border-top:1px solid rgba(232,69,122,.15);padding:.85rem 1.4rem;margin-top:auto;">
           <div style="font-family:var(--fd);font-size:1.45rem;font-weight:700;color:var(--navy);">1,5 – 3M Ft<span style="color:var(--pink)">/hó</span></div>
         </div>
+      </div>
+    </div>
+
+
+    <div class="inc-acc">
+      <div class="inc-item">
+        <button class="inc-head" onclick="toggleInc(this)" style="border-left-color:var(--teal);">Mit jelent valójában a havi 1-2,5 millió forintos jövedelem?<svg class="inc-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="inc-body"><div class="inc-inner"><p>Az oldalon szereplő jövedelmek valódi eredmények, ugyanakkor fontos megérteni, hogy ezek <strong>nem automatikusan járnak senkinek</strong>.</p><p>A pénzügyi elemzés / tanácsadás teljesítményalapú szakma. Nincs garantált bér, viszont nincs felső korlát sem. A bevételedet alapvetően az határozza meg, hogy mennyi értéket teremtesz az ügyfeleknek, milyen gyorsan fejlődsz, és mennyire vagy kitartó.</p><p>A legtöbben, akik eljutnak a havi 1-2,5 millió forintos szintre, nagyjából az alábbiakat csinálják:</p><ul><li>heti 30–40 óra munkát tesznek bele (akár diákként is - irodai rekordunk 3,3 millió Ft, 22 évesen)</li><li>folyamatosan tanulnak és fejlesztik magukat</li><li>rendszeresen keresnek új lehetőségeket, együttműködő partnereket</li><li>hetente több elemzést és tanácsadást tartanak</li><li>következetesen dolgoznak hónapokon keresztül, nem csak akkor, amikor éppen kedvük van</li></ul><p><strong>Ez nem egy „gyors meggazdagodás” típusú lehetőség.</strong></p><p>A legtöbb kollégánknak hónapokra van szüksége ahhoz, hogy stabilizálódjon ezen a szinten, megtanulja a szakmát és eljusson idáig. Van, akinek gyorsabban sikerül, másnak több idő kell hozzá - ez leginkább a befektetett munka mennyiségén és minőségén múlik.</p><p>Mi minden jelentkezőnek ugyanazt az esélyt tudjuk biztosítani: képzést, mentorálást, működő rendszert és támogatást. <strong>Az eredményt viszont senki helyett nem tudjuk megdolgozni.</strong></p><p>Ha motivál, hogy a saját teljesítményed határozza meg a keresetedet, akkor ez egy olyan pálya, ami fél évszázada bizonyítja: az átlagnál gyorsabban kerülhetsz a TOP mezőnybe.</p></div></div>
+      </div>
+      <div class="inc-item">
+        <button class="inc-head" onclick="toggleInc(this)" style="border-left-color:var(--pink);">Milyen út vezet a havi 3 milliós jövedelemhez?<svg class="inc-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="inc-body"><div class="inc-inner"><p>A több millió forintos havi bevétel már egy teljesen más szint.</p><p>Ezt nem néhány jól sikerült ügyfél vagy egy szerencsés hónap eredményezi, hanem évek alatt felépített acélos szakmai tudás, következetes munka és sok esetben egy saját csapat vezetése.</p><p>Akik ezen a szinten dolgoznak, jellemzően:</p><ul><li>több száz ügyféllel dolgoznak</li><li>hosszú évek óta építik a franchise vállalkozásukat</li><li>vezetőként más tanácsadók / irodák fejlődéséért is felelnek</li><li>folyamatosan képezik magukat</li><li>napi szinten hoznak üzleti döntéseket</li><li>rendezvényeket szerveznek</li><li>a HR-folyamatok motorjai</li><li>marketinget fejlesztenek</li></ul><p><strong>Fontos megérteni, hogy ez nem egy kezdő fizetés.</strong></p><p>Ahogy egy ügyvéd, orvos vagy vállalkozó sem keres több millió forintot az első hónapban, úgy nálunk is hosszabb fejlődési út vezet idáig. Az itt bemutatott jövedelmek olyan kollégák eredményei, akik évek óta építik a karrierjüket, rengeteg tapasztalatot szereztek, és sok munkát tettek bele, hogy eljussanak erre a szintre.</p><p><strong>Nem ígérjük, hogy mindenki több millió forintot fog keresni.</strong> Azt viszont igen, hogy aki hosszú távon gondolkodik, hajlandó tanulni, dolgozni és fejlődni, annak a keresetét nem egy előre meghatározott bértábla fogja korlátozni.</p><p>A célunk, hogy ebbe a lehetőségbe azok kapaszkodjanak, akiknek a hosszú távú franchise-működés, önálló vállalkozás és irodák fejlesztése a végcélja.</p></div></div>
       </div>
     </div>
 
@@ -1986,6 +2013,9 @@ function toggleCase(b){b.parentElement.classList.toggle("open");}
 </script>
 <script>
 function toggleStory(b){b.parentElement.classList.toggle("open");}
+</script>
+<script>
+function toggleInc(b){b.parentElement.classList.toggle("open");}
 </script>
 </body>
 </html>
